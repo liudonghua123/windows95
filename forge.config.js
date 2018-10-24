@@ -7,11 +7,11 @@ module.exports = {
       unpack: '**/images/*.img'
     },
     icon: path.resolve(__dirname, 'assets', 'icon'),
-    appBundleId: 'com.felixrieseberg.windows95',
+    appBundleId: 'com.felixrieseberg.windows98',
     appCategoryType: 'public.app-category.developer-tools',
     win32metadata: {
       CompanyName: 'Felix Rieseberg',
-      OriginalFilename: 'windows95',
+      OriginalFilename: 'windows98',
     },
     osxSign: {
       identity: 'Developer ID Application: Felix Rieseberg (LT94ZKYDCJ)'
@@ -22,12 +22,12 @@ module.exports = {
       name: '@electron-forge/maker-squirrel',
       platforms: ['win32'],
       config: {
-        name: 'windows95',
+        name: 'windows98',
         authors: 'Felix Rieseberg',
-        exe: 'windows95.exe',
+        exe: 'windows98.exe',
         noMsi: true,
         remoteReleases: '',
-        setupExe: `windows95-${package.version}-setup-${process.arch}.exe`,
+        setupExe: `windows98-${package.version}-setup-${process.arch}.exe`,
         setupIcon: path.resolve(__dirname, 'assets', 'icon.ico'),
         certificateFile: process.env.WINDOWS_CERTIFICATE_FILE,
         certificatePassword: process.env.WINDOWS_CERTIFICATE_PASSWORD

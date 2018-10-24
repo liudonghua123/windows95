@@ -2,10 +2,10 @@ const { app, shell, Menu, BrowserWindow } = require('electron')
 const defaultMenu = require('electron-default-menu')
 
 const LINKS = {
-  homepage: 'https://www.felixrieseberg.com',
-  repo: 'https://github.com/felixrieseberg/windows95',
-  credits: 'https://github.com/felixrieseberg/windows95/blob/master/CREDITS.md',
-  help: 'https://github.com/felixrieseberg/windows95/blob/master/HELP.md'
+  homepage: 'https://www.liudonghua.com',
+  repo: 'https://github.com/liudonghua123/windows98',
+  credits: 'https://github.com/liudonghua123/windows98/blob/master/CREDITS.md',
+  help: 'https://github.com/liudonghua123/windows98/blob/master/HELP.md'
 }
 
 function send (cmd) {

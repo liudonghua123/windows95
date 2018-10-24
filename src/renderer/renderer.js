@@ -20,9 +20,9 @@ async function main () {
       url: './bios/vgabios.bin'
     },
     hda: {
-      url: '../images/windows95.img',
+      url: '../images/windows98.img',
       async: true,
-      size: 242049024
+      size: 300 * 1024 * 1024
     },
     fda: {
       buffer: window.appState.floppyFile || undefined
@@ -42,7 +42,7 @@ async function main () {
   // wait time (lol)
   setTimeout(async () => {
     if (!window.appState.bootFresh) {
-      windows95.restoreState()
+      windows98.restoreState()
     }
 
     setupInfo()

@@ -1,10 +1,10 @@
-# windows95 Credits
+# windows98 Credits
 
 This app was made possible by three major engineering efforts:
 
  * [v86 by Fabian Hemmer](https://github.com/copy/v86)
  * [Electron by the Electron Maintainers](https://electronjs.org)
- * Windows 95 by Microsoft
+ * Windows 98 by Microsoft
 
 # v86 License and Copyright Notice
 

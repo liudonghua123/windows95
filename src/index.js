@@ -11,7 +11,7 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 
 if (app.isPackaged) {
   require('update-electron-app')({
-    repo: 'felixrieseberg/windows95',
+    repo: 'liudonghua123/windows98',
     updateInterval: '1 hour'
   })
 }

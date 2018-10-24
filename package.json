@@ -1,8 +1,8 @@
 {
-  "name": "windows95",
-  "productName": "windows95",
+  "name": "windows98",
+  "productName": "windows98",
   "version": "1.3.0",
-  "description": "Windows 95, in an app. I'm sorry.",
+  "description": "Windows 98, in an app. I'm sorry.",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -21,7 +21,7 @@
     "globals": [
       "appState",
       "V86Starter",
-      "windows95"
+      "windows98"
     ],
     "ignore": [
       "/src/renderer/lib/*.js"
@@ -34,13 +34,13 @@
     "update-electron-app": "^1.3.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.22",
-    "@electron-forge/maker-deb": "^6.0.0-beta.22",
-    "@electron-forge/maker-flatpak": "^6.0.0-beta.22",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.22",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.22",
-    "@electron-forge/maker-zip": "^6.0.0-beta.22",
-    "electron": "3.0.0-beta.6",
+    "@electron-forge/cli": "^6.0.0-beta.29",
+    "@electron-forge/maker-deb": "^6.0.0-beta.29",
+    "@electron-forge/maker-flatpak": "^6.0.0-beta.29",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.29",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.29",
+    "@electron-forge/maker-zip": "^6.0.0-beta.29",
+    "electron": "3.0.5",
     "standard": "^11.0.1"
   }
 }

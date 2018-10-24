@@ -5,15 +5,15 @@ export function setupButtons (start) {
   $('.btn-start').addEventListener('click', () => start())
 
   // Disk Image
-  $('#show-disk-image').addEventListener('click', () => windows95.showDiskImage())
+  $('#show-disk-image').addEventListener('click', () => windows98.showDiskImage())
 
   // Reset
-  $('#reset').addEventListener('click', () => windows95.resetState())
+  $('#reset').addEventListener('click', () => windows98.resetState())
 
   $('#discard-state').addEventListener('click', () => {
     window.appState.bootFresh = true
 
-    start('win95')
+    start('win98')
   })
 
   // Floppy

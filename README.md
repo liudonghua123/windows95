@@ -1,14 +1,14 @@
-# windows95
+# windows98
 
-This is Windows 95, running in an [Electron](https://electronjs.org/) app. Yes, it's the full thing. I'm sorry.
+This is Windows 98, running in an [Electron](https://electronjs.org/) app. Yes, it's the full thing. I'm sorry.
 
 Interested in Electron? Join as at [CovalenceConf](http://covalenceconf.com) in San Francisco! 
 
 ## Downloads
 |  | Windows | macOS | Linux |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Standalone Download | 📦[Standalone, 32-bit](https://github.com/felixrieseberg/windows95/releases/download/v1.3.0/windows95-win32-1.3.0-standalone-ia32.zip) <br /> 📦[Standalone, 64-bit](https://github.com/felixrieseberg/windows95/releases/download/v1.3.0/windows95-win32-1.3.0-standalone-x64.zip)  | 📦[Standalone](https://github.com/felixrieseberg/windows95/releases/download/v1.3.0/windows95-macos-1.3.0.zip) |  |
-| Installer | 💽[Setup, 64-bit](https://github.com/felixrieseberg/windows95/releases/download/v1.3.0/windows95-win32-1.3.0-setup-x64.exe) <br /> 💽[Setup, 32-bit](https://github.com/felixrieseberg/windows95/releases/download/v1.3.0/windows95-win32-1.3.0-setup-ia32.exe)  |  |  💽[deb, 64-bit](https://github.com/felixrieseberg/windows95/releases/download/v1.3.0/windows95-linux_1.3.0_amd64.deb) <br /> 💽[rpm, 64-bit](https://github.com/felixrieseberg/windows95/releases/download/v1.3.0/windows95-linux-1.3.0.x86_64.rpm) |
+| Standalone Download | 📦[Standalone, 32-bit](https://github.com/liudonghua123/windows98/releases/download/v1.3.0/windows98-win32-1.3.0-standalone-ia32.zip) <br /> 📦[Standalone, 64-bit](https://github.com/liudonghua123/windows98/releases/download/v1.3.0/windows98-win32-1.3.0-standalone-x64.zip)  | 📦[Standalone](https://github.com/liudonghua123/windows98/releases/download/v1.3.0/windows98-macos-1.3.0.zip) |  |
+| Installer | 💽[Setup, 64-bit](https://github.com/liudonghua123/windows98/releases/download/v1.3.0/windows98-win32-1.3.0-setup-x64.exe) <br /> 💽[Setup, 32-bit](https://github.com/liudonghua123/windows98/releases/download/v1.3.0/windows98-win32-1.3.0-setup-ia32.exe)  |  |  💽[deb, 64-bit](https://github.com/liudonghua123/windows98/releases/download/v1.3.0/windows98-linux_1.3.0_amd64.deb) <br /> 💽[rpm, 64-bit](https://github.com/liudonghua123/windows98/releases/download/v1.3.0/windows98-linux-1.3.0.x86_64.rpm) |
 
 ![Screenshot](https://user-images.githubusercontent.com/1426799/44532591-4ceb3680-a6a8-11e8-8c2c-bc29f3bfdef7.png)
 
@@ -39,7 +39,7 @@ release, which does include the disk image.
 Unpack the `images` folder into the `src` folder, creating this layout:
 
 ```
-./src/images/windows95.img
+./src/images/windows98.img
 ```
 
 Once you've done so, run `npm install` and `npm start` to run your local build.

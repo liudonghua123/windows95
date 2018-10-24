@@ -2,9 +2,9 @@ export function setupCloseListener () {
   window.appState.isQuitting = false
 
   const handleClose = async () => {
-    await windows95.saveState()
+    await windows98.saveState()
     window.appState.isQuitting = true
-    windows95.quit()
+    windows98.quit()
   }
 
   window.onbeforeunload = (event) => {

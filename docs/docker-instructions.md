@@ -1,4 +1,4 @@
-# Running windows95 in Docker
+# Running windows98 in Docker
 
 ## Display using a volume mount of the host X11 Unix Socket (Linux Only):
 
@@ -6,7 +6,7 @@
 * Linux OS with a running X-Server Display
 * [Docker](http://docker.io) 
 
-        docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY --device /dev/snd --name windows95 toolboc/windows95
+        docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY --device /dev/snd --name windows98 toolboc/windows98
 
 
 Note: You may need to run `xhost +` on your system to allow connections to the X server running on the host.
@@ -20,7 +20,7 @@ Note: You may need to run `xhost +` on your system to allow connections to the X
 1. Start the Xming X11 Server
 2. Run the command below:
 
-        docker run -e DISPLAY=host.docker.internal:0 --name windows95 toolboc/windows95
+        docker run -e DISPLAY=host.docker.internal:0 --name windows98 toolboc/windows98
 
 ## Display using the host XQuartz Server (MacOS Only):
 **Requirements:**
@@ -30,4 +30,4 @@ Note: You may need to run `xhost +` on your system to allow connections to the X
 1. Start XQuartz ,go to "Preferences -> Security " ,and check the box "allow connections from network clients"
 2. restart XQuartz
 3. In the terminal ,run "xhost +"
-4. run "docker run -it -e DISPLAY=host.docker.internal:1 toolboc/windows95"
+4. run "docker run -it -e DISPLAY=host.docker.internal:1 toolboc/windows98"

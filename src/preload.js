@@ -3,14 +3,14 @@ const path = require('path')
 
 const { STATE_PATH, resetState, restoreState, saveState } = require('./state')
 
-window.windows95 = {
+window.windows98 = {
   STATE_PATH,
   restoreState,
   resetState,
   saveState,
 
   showDiskImage () {
-    const imagePath = path.join(__dirname, 'images/windows95.img')
+    const imagePath = path.join(__dirname, 'images/windows98.img')
       .replace('app.asar', 'app.asar.unpacked')
 
     shell.showItemInFolder(imagePath)
@@ -41,5 +41,5 @@ ipcRenderer.on('restart', () => {
 })
 
 ipcRenderer.on('disk-image', () => {
-  windows95.showDiskImage()
+  windows98.showDiskImage()
 })

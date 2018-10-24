@@ -1,10 +1,10 @@
-# DESCRIPTION:	  Run Windows 95 in a container
+# DESCRIPTION:	  Run Windows 98 in a container
 # AUTHOR:		  Paul DeCarlo <toolboc@gmail.com>
 #
 #   Made possible through prior art by:
 #   copy (v86 - x86 virtualization in JavaScript) 
-#   felixrieseberg (Windows95 running in electron) 
-#   Microsoft (Windows 95)
+#   felixrieseberg (Windows98 running in electron) 
+#   Microsoft (Windows 98)
 #
 #   ***Docker Run Command***
 #
@@ -12,8 +12,8 @@
 #    -v /tmp/.X11-unix:/tmp/.X11-unix \ # mount the X11 socket
 #    -e DISPLAY=unix$DISPLAY \ # pass the display
 #    --device /dev/snd \ # sound
-#    --name windows95 \
-#    toolboc/windows95
+#    --name windows98 \
+#    toolboc/windows98
 #
 #   ***TroubleShooting***
 #   If you receive Gtk-WARNING **: cannot open display: unix:0

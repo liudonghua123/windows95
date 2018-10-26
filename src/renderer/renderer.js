@@ -11,7 +11,7 @@ setupState()
 async function main () {
   // New v86 instance
   window.emulator = new V86Starter({
-    memory_size: 64 * 1024 * 1024,
+    memory_size: 256 * 1024 * 1024,
     screen_container: document.getElementById('emulator'),
     bios: {
       url: './bios/seabios.bin'

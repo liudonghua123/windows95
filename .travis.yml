@@ -1,0 +1,48 @@
+
+language: node_js
+
+os:
+- windows
+- linux
+- osx
+
+node_js:
+- '10'
+
+before_install:
+- wget https://i.copy.sh/images/windows98.img -P src/images/
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y fakeroot rpm; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y tree; fi
+- npm i -g shx
+
+before_deploy:
+- git config --local user.name "liudonghua123"
+- git config --local user.email "liudonghua123@gmail.com"
+
+script:
+- npm run make
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then tree out/make; fi
+- shx ls -la out/make
+
+matrix:
+  allow_failures:
+    - os: osx
+
+deploy:
+  provider: releases
+  file:
+  - out/make/windows98-win32-ia32-1.3.0.zip
+  - out/make/windows98-win32-x64-1.3.0.zip
+  - out/make/squirrel.windows/ia32/windows98-win32-1.3.0-setup-ia32.exe
+  - out/make/squirrel.windows/x64/windows98-win32-1.3.0-setup-x64.exe
+  - out/make/windows98-linux-ia32-1.3.0.zip
+  - out/make/windows98-linux-x64-1.3.0.zip
+  - out/make/windows98-1.3.0.i386.rpm
+  - out/make/windows98-1.3.0.x86_64.rpm
+  - out/make/windows98_1.3.0_amd64.deb
+  - out/make/windows98_1.3.0_i386.deb
+  skip_cleanup: true
+  on:
+    tags: true
+  api-key:
+    secure: mmAT0mRsb8eDmXlEjoDv3oLsCXxP9opgRLIeA6OoCcnETRi7ET8vxp1gMp2FiSLBffLb5NURUxhZr29jwbFdkJ/n6+OPyJjz+HixTnfPZS/IB8tVwbEx9bX069Uk36M1omzt61SgyGeRr9ZZcBgTzUaK7F7opLY9xnoKhFD3pLxTzFtFakrTseEWZPD4gXI48UY3FCyOjQtzXSz6AJ+7nfjGRwg3n2jg8waDEAxWB8wpatOkJKJ1Btw2kqcr2OpIJngjFmSktuSS/H9t2FXbr2braxsFed63AMa50Bjb+ndYMomj/X/VWopyXkz3zZSwcfwQ+1+LScdC1+kvQr23pL+SO896fjNTGv5QbjjIyLdTWmIA5g7lMPs4Ugu/Wtj+8Z8SoCEKEwhYXLnLIc0bySU6mTRMBbt0OReIMmpxEAA4gbqph4fh1TP72QUK9hdcMEyrxnumDvVGqbGwuxLJyPfB0eG91T8GKvwLqYwUAO0yYBHNcQlEPcn1/CRnj/ndDM4aYSQ85kYLz7vwzMdo/Xd/FCraKJmWH2+W0R3a7OjOpzQKoooxhs9CWnrSKlxco9oJTbiQbDsijJF+j9eZL2I9jGZQCv7wWCcPlhdqIK4q7s5oKh3CO0IaxdkY0E5+ceXn99Fx906QV+XrQFi7u/Fz9b2M07DvUpHwU+/wCiI=

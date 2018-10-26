@@ -7,14 +7,14 @@ module.exports = {
       unpack: '**/images/*.img'
     },
     icon: path.resolve(__dirname, 'assets', 'icon'),
-    appBundleId: 'com.felixrieseberg.windows98',
+    appBundleId: 'com.liudonghua.windows98',
     appCategoryType: 'public.app-category.developer-tools',
     win32metadata: {
-      CompanyName: 'Felix Rieseberg',
+      CompanyName: 'Donghua Liu',
       OriginalFilename: 'windows98',
     },
     osxSign: {
-      identity: 'Developer ID Application: Felix Rieseberg (LT94ZKYDCJ)'
+      identity: 'Developer ID Application: Donghua Liu (TODO)'
     },
   },
   makers: [
@@ -23,31 +23,41 @@ module.exports = {
       platforms: ['win32'],
       config: {
         name: 'windows98',
-        authors: 'Felix Rieseberg',
+        authors: 'Donghua Liu',
         exe: 'windows98.exe',
         noMsi: true,
         remoteReleases: '',
-        setupExe: `windows98-${package.version}-setup-${process.arch}.exe`,
+        setupExe: `windows98-win32-${package.version}-setup-${process.arch}.exe`,
         setupIcon: path.resolve(__dirname, 'assets', 'icon.ico'),
         certificateFile: process.env.WINDOWS_CERTIFICATE_FILE,
         certificatePassword: process.env.WINDOWS_CERTIFICATE_PASSWORD
       }
     },
     {
-      name: '@electron-forge/maker-zip',
-      platforms: ['darwin']
+      // https://v6.electronforge.io/makers/zip
+      name: '@electron-forge/maker-zip'
     },
     {
       name: '@electron-forge/maker-deb',
-      platforms: ['linux']
+      platforms: ['linux'],
+      // https://js.electronforge.io/maker/deb/interfaces/makerdebconfigoptions
+      config: {
+        name: 'windows98',
+        maintainer: 'liudonghua123',
+        homepage: 'liudonghua.com',
+        icon: path.resolve(__dirname, 'assets', 'icon.ico')
+      }
     },
     {
       name: '@electron-forge/maker-rpm',
-      platforms: ['linux']
-    },
-    {
-      name: '@electron-forge/maker-flatpak',
-      platforms: ['linux']
+      platforms: ['linux'],
+      // https://js.electronforge.io/maker/rpm/interfaces/makerrpmconfigoptions
+      config: {
+        name: 'windows98',
+        maintainer: 'liudonghua123',
+        homepage: 'liudonghua.com',
+        icon: path.resolve(__dirname, 'assets', 'icon.ico')
+      }
     }
   ]
 };

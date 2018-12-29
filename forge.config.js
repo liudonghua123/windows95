@@ -21,16 +21,18 @@ module.exports = {
     {
       name: '@electron-forge/maker-squirrel',
       platforms: ['win32'],
-      config: {
-        name: 'windows98',
-        authors: 'Donghua Liu',
-        exe: 'windows98.exe',
-        noMsi: true,
-        remoteReleases: '',
-        setupExe: `windows98-win32-${package.version}-setup-${process.arch}.exe`,
-        setupIcon: path.resolve(__dirname, 'assets', 'icon.ico'),
-        certificateFile: process.env.WINDOWS_CERTIFICATE_FILE,
-        certificatePassword: process.env.WINDOWS_CERTIFICATE_PASSWORD
+      config: (arch) => {
+        return {
+          name: 'windows98',
+          authors: 'Donghua Liu',
+          exe: 'windows98.exe',
+          noMsi: true,
+          remoteReleases: '',
+          setupExe: `windows98-win32-${package.version}-setup-${arch}.exe`,
+          setupIcon: path.resolve(__dirname, 'assets', 'icon.ico'),
+          certificateFile: process.env.WINDOWS_CERTIFICATE_FILE,
+          certificatePassword: process.env.WINDOWS_CERTIFICATE_PASSWORD
+        }
       }
     },
     {

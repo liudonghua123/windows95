@@ -2,10 +2,11 @@ const path = require('path');
 const package = require('./package.json');
 
 module.exports = {
+  hooks: {
+    generateAssets: require('./tools/generateAssets'),
+  },
   packagerConfig: {
-    asar: {
-      unpack: '**/images/*.img'
-    },
+    asar: false,
     icon: path.resolve(__dirname, 'assets', 'icon'),
     appBundleId: 'com.liudonghua.windows98',
     appCategoryType: 'public.app-category.developer-tools',
@@ -14,14 +15,26 @@ module.exports = {
       OriginalFilename: 'windows98',
     },
     osxSign: {
-      identity: 'Developer ID Application: Donghua Liu (TODO)'
+      identity: 'Developer ID Application: Donghua Liu (TODO)',
     },
+    ignore: [
+      /\/assets(\/?)/,
+      /\/docs(\/?)/,
+      /\/tools(\/?)/,
+      /\/src\/.*\.ts/,
+      /package-lock\.json/,
+      /README\.md/,
+      /tsconfig\.json/,
+      /Dockerfile/,
+      /issue_template\.md/,
+      /HELP\.md/,
+    ],
   },
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
       platforms: ['win32'],
-      config: (arch) => {
+      config: arch => {
         return {
           name: 'windows98',
           authors: 'Donghua Liu',
@@ -31,13 +44,13 @@ module.exports = {
           setupExe: `windows98-win32-${package.version}-setup-${arch}.exe`,
           setupIcon: path.resolve(__dirname, 'assets', 'icon.ico'),
           certificateFile: process.env.WINDOWS_CERTIFICATE_FILE,
-          certificatePassword: process.env.WINDOWS_CERTIFICATE_PASSWORD
-        }
-      }
+          certificatePassword: process.env.WINDOWS_CERTIFICATE_PASSWORD,
+        };
+      },
     },
     {
-      // https://v6.electronforge.io/makers/zip
-      name: '@electron-forge/maker-zip'
+      name: '@electron-forge/maker-zip',
+      platforms: ['darwin', 'win32'],
     },
     {
       name: '@electron-forge/maker-deb',
@@ -47,8 +60,8 @@ module.exports = {
         name: 'windows98',
         maintainer: 'liudonghua123',
         homepage: 'liudonghua.com',
-        icon: path.resolve(__dirname, 'assets', 'icon.ico')
-      }
+        icon: path.resolve(__dirname, 'assets', 'icon.ico'),
+      },
     },
     {
       name: '@electron-forge/maker-rpm',
@@ -58,8 +71,8 @@ module.exports = {
         name: 'windows98',
         maintainer: 'liudonghua123',
         homepage: 'liudonghua.com',
-        icon: path.resolve(__dirname, 'assets', 'icon.ico')
-      }
-    }
-  ]
+        icon: path.resolve(__dirname, 'assets', 'icon.ico'),
+      },
+    },
+  ],
 };

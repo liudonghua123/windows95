@@ -1,28 +1,27 @@
-
 language: node_js
 
 os:
-- windows
-- linux
-- osx
+  - windows
+  - linux
+  - osx
 
 node_js:
-- '10'
+  - "10"
 
 before_install:
-- wget https://i.copy.sh/images/windows98.img -P src/images/
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y fakeroot rpm; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y tree; fi
-- npm i -g shx
+  - wget https://i.copy.sh/images/windows98.img -P src/images/
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y fakeroot rpm; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y tree; fi
+  - npm i -g shx
 
 before_deploy:
-- git config --local user.name "liudonghua123"
-- git config --local user.email "liudonghua123@gmail.com"
+  - git config --local user.name "liudonghua123"
+  - git config --local user.email "liudonghua123@gmail.com"
 
 script:
-- npm run make
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then tree out/make; fi
-- shx ls -la out/make
+  - npm run make
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then tree out/make; fi
+  - shx ls -la out/make
 
 matrix:
   allow_failures:
@@ -31,16 +30,16 @@ matrix:
 deploy:
   provider: releases
   file:
-  - out/make/windows98-win32-ia32-1.3.0.zip
-  - out/make/windows98-win32-x64-1.3.0.zip
-  - out/make/squirrel.windows/ia32/windows98-win32-1.3.0-setup-ia32.exe
-  - out/make/squirrel.windows/x64/windows98-win32-1.3.0-setup-x64.exe
-  - out/make/windows98-linux-ia32-1.3.0.zip
-  - out/make/windows98-linux-x64-1.3.0.zip
-  - out/make/windows98-1.3.0.i386.rpm
-  - out/make/windows98-1.3.0.x86_64.rpm
-  - out/make/windows98_1.3.0_amd64.deb
-  - out/make/windows98_1.3.0_i386.deb
+    - out/make/windows98-win32-ia32-1.3.0.zip
+    - out/make/windows98-win32-x64-1.3.0.zip
+    - out/make/squirrel.windows/ia32/windows98-win32-1.3.0-setup-ia32.exe
+    - out/make/squirrel.windows/x64/windows98-win32-1.3.0-setup-x64.exe
+    - out/make/windows98-linux-ia32-1.3.0.zip
+    - out/make/windows98-linux-x64-1.3.0.zip
+    - out/make/windows98-1.3.0.i386.rpm
+    - out/make/windows98-1.3.0.x86_64.rpm
+    - out/make/windows98_1.3.0_amd64.deb
+    - out/make/windows98_1.3.0_i386.deb
   skip_cleanup: true
   on:
     tags: true

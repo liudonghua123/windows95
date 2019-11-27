@@ -1,46 +1,50 @@
 {
   "name": "windows98",
   "productName": "windows98",
-  "version": "1.3.0",
+  "version": "2.2.0",
   "description": "Windows 98, in an app. I'm sorry.",
-  "main": "src/index.js",
+  "main": "./dist/src/main/main",
   "scripts": {
-    "start": "electron-forge start",
+    "start": "rimraf ./dist && electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make --arch=ia32,x64",
     "publish": "electron-forge publish",
-    "lint": "standard \"src/**/*.js\""
+    "lint": "prettier --write src/**/*.{ts,tsx}",
+    "less": "node ./tools/lessc.js"
   },
   "keywords": [],
-  "author": "Felix Rieseberg, felix@felixrieseberg.com",
+  "author": "donghua liu, liudonghua123@gmail.com",
   "license": "MIT",
   "config": {
     "forge": "./forge.config.js"
   },
-  "standard": {
-    "globals": [
-      "appState",
-      "V86Starter",
-      "windows98"
-    ],
-    "ignore": [
-      "/src/renderer/lib/*.js"
-    ]
-  },
   "dependencies": {
-    "electron-default-menu": "^1.0.1",
     "electron-squirrel-startup": "^1.0.0",
-    "fs-extra": "^7.0.0",
-    "update-electron-app": "^1.3.0"
+    "fs-extra": "^8.1.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "tslib": "^1.10.0",
+    "update-electron-app": "^1.5.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.30",
-    "@electron-forge/maker-deb": "^6.0.0-beta.30",
-    "@electron-forge/maker-flatpak": "^6.0.0-beta.30",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.30",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.30",
-    "@electron-forge/maker-zip": "^6.0.0-beta.30",
-    "electron": "4.0.0",
-    "standard": "^11.0.1"
+    "@electron-forge/cli": "^6.0.0-beta.45",
+    "@electron-forge/maker-deb": "^6.0.0-beta.45",
+    "@electron-forge/maker-flatpak": "^6.0.0-beta.45",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.45",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.45",
+    "@electron-forge/maker-zip": "^6.0.0-beta.45",
+    "@electron-forge/publisher-github": "^6.0.0-beta.45",
+    "@types/fs-extra": "^8.0.0",
+    "@types/node": "^12.12.9",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
+    "electron": "^7.1.2",
+    "less": "^3.10.1",
+    "node-abi": "^2.12.0",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "standard": "^14.3.1",
+    "typescript": "^3.7.2"
   }
 }

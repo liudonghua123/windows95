@@ -6,7 +6,7 @@ os:
   - osx
 
 node_js:
-  - "10"
+  - '10'
 
 before_install:
   - wget https://i.copy.sh/images/windows98.img -P src/images/
@@ -19,7 +19,9 @@ before_deploy:
   - git config --local user.email "liudonghua123@gmail.com"
 
 script:
-  - npm run make
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then npm run make; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm run make; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run make:osx; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then tree out/make; fi
   - shx ls -la out/make
 
@@ -40,6 +42,7 @@ deploy:
     - out/make/windows98-1.3.0.x86_64.rpm
     - out/make/windows98_1.3.0_amd64.deb
     - out/make/windows98_1.3.0_i386.deb
+    - out/make/windows98-darwin-x64-1.3.0.zip
   skip_cleanup: true
   on:
     tags: true
